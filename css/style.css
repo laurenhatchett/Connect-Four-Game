@@ -1,23 +1,26 @@
-html {
+
+/*html {
   box-sizing: border-box
 }
 
 /* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
+/*, /* All elements*/
+/*::before, /* All ::before pseudo-elements */
+/*::after { /* All ::after pseudo-elements */
   /* height & width will now include border & padding by default
      but can be over-ridden as needed */
-  box-sizing: inherit;
-}
+/* box-sizing: inherit;
+}*/
 
 body{
   background-color: #5f0f40;
   /*font-family:*/
   margin:0;
   height: 100vh;
-  display: flex;
+  /*display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;*/
   
 }
 
@@ -29,3 +32,10 @@ h2{
   color:white
 }
 
+/*section.board {
+  display: grid;
+  grid-template-columns: 7 ;
+  grid-template-rows: 7 ;
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+}*/

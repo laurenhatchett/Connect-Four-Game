@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+body{
+  background-color: #5f0f40;
+  /*font-family:*/
+  margin:0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+h1{
+  color: white
+}
+
+h2{
+  color:white
+}
+

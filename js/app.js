@@ -31,45 +31,51 @@ let board, turn, winner
 
 /*------------------ Cached Element References --------------*/
 
-const invisibleRowEl = document.querySelectorAll('.invisible-square')
+
 const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector('#message')
 const resetBtnEl = document.querySelector('#reset-button')
 
-//console.log(squareEls)
+console.log(squareEls)
 //console.log(messageEl)
-//console.log(invisibleRowEl)
+
 
 /*--------------------- Event Listeners -----------------------*/
 
-//invisibleRowEl = document.querySelectorAll('click', selectClick)
-
-squareEls.forEach((square) =>
+squareEls.forEach((square) => {
   square.addEventListener('click', handleClick)
-)
+})
 
 resetBtnEl.addEventListener('click', init)
 
 /*--------------------- Row & ColumnArrays -----------------------*/
 
-const invisibleRow = [invisibleRowEl[0], invisibleRowEl[1],invisibleRowEl[2],invisibleRowEl[3],invisibleRowEl[4], invisibleRowEl[5], invisibleRowEl[6]]
+// const invisibleRow = [invisibleRowEl[0], invisibleRowEl[1],invisibleRowEl[2],invisibleRowEl[3],invisibleRowEl[4], invisibleRowEl[5], invisibleRowEl[6]]
 
-const row1 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]]
-const row2 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]]
-const row3 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]]
-const row4 = [squareEls[21], squareEls[22], squareEls[23], squareEls[24], squareEls[25], squareEls[26], squareEls[27]]
-const row5 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]]
-const row6 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]]
-const rows = [invisibleRow, row1, row2, row3, row4, row5, row6]
+// const row1 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]]
+// const row2 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]]
+// const row3 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]]
+// const row4 = [squareEls[21], squareEls[22], squareEls[23], squareEls[24], squareEls[25], squareEls[26], squareEls[27]]
+// const row5 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]]
+// const row6 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]]
 
-const column1 = [squareEls[0], squareEls[7], squareEls[14], squareEls[21], squareEls[28], squareEls[35]]
-const column2= [squareEls[1], squareEls[8], squareEls[15], squareEls[22], squareEls[29], squareEls[36]]
-const column3= [squareEls[2], squareEls[9], squareEls[16], squareEls[23], squareEls[30], squareEls[37]]
-const column4= [squareEls[3], squareEls[10], squareEls[17], squareEls[24], squareEls[31], squareEls[38]] 
-const column5= [squareEls[4], squareEls[11], squareEls[18], squareEls[25], squareEls[32], squareEls[39]]
-const column6= [squareEls[5], squareEls[12], squareEls[19], squareEls[26], squareEls[33], squareEls[40]]
-const column7= [squareEls[6], squareEls[13], squareEls[20], squareEls[27], squareEls[34], squareEls[41]]
-const columns= [column1, column2, column3, column4, column5, column6, column7]
+// const invisRow = [invisibleRow]
+// const rows = [row1, row2, row3, row4, row5, row6, invisibleRow]
+
+// const column1 = [squareEls[0], squareEls[7], squareEls[14], squareEls[21], squareEls[28], squareEls[35]]
+// const column2= [squareEls[1], squareEls[8], squareEls[15], squareEls[22], squareEls[29], squareEls[36]]
+// const column3= [squareEls[2], squareEls[9], squareEls[16], squareEls[23], squareEls[30], squareEls[37]]
+// const column4= [squareEls[3], squareEls[10], squareEls[17], squareEls[24], squareEls[31], squareEls[38]] 
+// const column5= [squareEls[4], squareEls[11], squareEls[18], squareEls[25], squareEls[32], squareEls[39]]
+// const column6= [squareEls[5], squareEls[12], squareEls[19], squareEls[26], squareEls[33], squareEls[40]]
+// const column7= [squareEls[6], squareEls[13], squareEls[20], squareEls[27], squareEls[34], squareEls[41]]
+
+// const columns= [column1, column2, column3, column4, column5, column6, column7]
+
+// for (const row of rows){
+//   for (const squareEls of rows)
+//   //console.log(squareEls)
+// //}
 
 
 
@@ -85,18 +91,18 @@ function init () {
 }
 
 function render (){
-  board.forEach((squares, idx) =>{ //change to for function 
+  board.forEach((squares, idx) =>{  
     squareEls[idx].textContent = squares
     if (squares === 1) {
       squareEls[idx].textContent = '1' //game pieces
     } else if (squares === -1) {
       squareEls[idx].textContent = '2' //game pieces
     } else {
-      squareEls[idx].textContent = ' ' //game pieces
+      squareEls[idx].textContent = ' ' //when something hasn't happened yet 
     }
     if (winner === null) {
       return (turn === 1 ? messageEl.textContent = "Player 1's turn!!": messageEl.textContent = "Player 2's turn!!")
-    } else if (winner === 'T'){
+    } else if (winner === 'D'){
       return messageEl.textContent = 'Draw!'
     } else {
       return (winner === 1 ? messageEl.textContent = "Player 1 has won!" : messageEl.textContent = "Player 2 has won!")
@@ -104,43 +110,20 @@ function render (){
   })
 }
 
-//function selectClick(evt){
-// let isqIdx = 
-//}
+
 
 function handleClick(evt) {
   let sqIdx = parseInt(evt.target.id[2])
   console.log(evt.target.id[2])
-  if (board[sqIdx] !== null) {
-    return
+    if (board[sqIdx] !== null) {
+      return
   } else if (winner !== null) {
-    return
+      return
   } else {
     board.splice(sqIdx, 1, turn)
-    turn *= -1
+     turn *= -1
   }
   console.log(board[sqIdx])
   getWinner()
-  render()
-}
-
-function getWinner(){
-  winningCombos.forEach(winningCombo => {
-    let points = 0
-    winningCombo.forEach(idx => {
-      points += board[idx]
-    })
-    if (points === 4) {
-      return winner = 1
-    } else if (points === -4) {
-      return winner = -1
-    } else {
-      if(board.some(square =>
-        square === null
-        )=== false){
-          return winner = 'T'
-        }
-    }
-  })
   render()
 }

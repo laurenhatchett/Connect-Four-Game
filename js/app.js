@@ -36,19 +36,42 @@ const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector('#message')
 const resetBtnEl = document.querySelector('#reset-button')
 
-console.log(squareEls)
-console.log(messageEl)
-console.log(invisibleRowEl)
+//console.log(squareEls)
+//console.log(messageEl)
+//console.log(invisibleRowEl)
 
 /*--------------------- Event Listeners -----------------------*/
 
-invisibleRowEl = document.querySelectorAll('click', selectClick)
+//invisibleRowEl = document.querySelectorAll('click', selectClick)
 
 squareEls.forEach((square) =>
   square.addEventListener('click', handleClick)
 )
 
 resetBtnEl.addEventListener('click', init)
+
+/*--------------------- Row & ColumnArrays -----------------------*/
+
+const invisibleRow = [invisibleRowEl[0], invisibleRowEl[1],invisibleRowEl[2],invisibleRowEl[3],invisibleRowEl[4], invisibleRowEl[5], invisibleRowEl[6]]
+
+const row1 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]]
+const row2 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]]
+const row3 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]]
+const row4 = [squareEls[21], squareEls[22], squareEls[23], squareEls[24], squareEls[25], squareEls[26], squareEls[27]]
+const row5 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]]
+const row6 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]]
+const rows = [invisibleRow, row1, row2, row3, row4, row5, row6]
+
+const column1 = [squareEls[0], squareEls[7], squareEls[14], squareEls[21], squareEls[28], squareEls[35]]
+const column2= [squareEls[1], squareEls[8], squareEls[15], squareEls[22], squareEls[29], squareEls[36]]
+const column3= [squareEls[2], squareEls[9], squareEls[16], squareEls[23], squareEls[30], squareEls[37]]
+const column4= [squareEls[3], squareEls[10], squareEls[17], squareEls[24], squareEls[31], squareEls[38]] 
+const column5= [squareEls[4], squareEls[11], squareEls[18], squareEls[25], squareEls[32], squareEls[39]]
+const column6= [squareEls[5], squareEls[12], squareEls[19], squareEls[26], squareEls[33], squareEls[40]]
+const column7= [squareEls[6], squareEls[13], squareEls[20], squareEls[27], squareEls[34], squareEls[41]]
+const columns= [column1, column2, column3, column4, column5, column6, column7]
+
+
 
 /*------------------------ Functions -------------------------*/
 

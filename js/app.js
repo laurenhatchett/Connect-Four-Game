@@ -61,11 +61,11 @@ function render (){
   board.forEach((squares, idx) =>{ //change to for function 
     squareEls[idx].textContent = squares
     if (squares === 1) {
-      squareEls[idx].textContent = '1'
+      squareEls[idx].textContent = '1' //game pieces
     } else if (squares === -1) {
-      squareEls[idx].textContent = '2'
+      squareEls[idx].textContent = '2' //game pieces
     } else {
-      squareEls[idx].textContent = ' '
+      squareEls[idx].textContent = ' ' //game pieces
     }
     if (winner === null) {
       return (turn === 1 ? messageEl.textContent = "Player 1's turn!!": messageEl.textContent = "Player 2's turn!!")
@@ -90,5 +90,26 @@ function handleClick(evt) {
   }
   console.log(board[sqIdx])
   getWinner()
+  render()
+}
+
+function getWinner(){
+  winningCombos.forEach(winningCombo => {
+    let points = 0
+    winningCombo.forEach(idx => {
+      points += board[idx]
+    })
+    if (points === 4) {
+      return winner = 1
+    } else if (points === -4) {
+      return winner = -1
+    } else {
+      if(board.some(square =>
+        square === null
+        )=== false){
+          return winner = 'T'
+        }
+    }
+  })
   render()
 }

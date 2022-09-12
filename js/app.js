@@ -38,6 +38,7 @@ const resetBtnEl = document.querySelector('#reset-button')
 
 console.log(squareEls)
 console.log(messageEl)
+console.log(invisibleRowEl)
 
 /*--------------------- Event Listeners -----------------------*/
 
@@ -77,6 +78,8 @@ function render (){
     }
   })
 }
+
+//function //
 
 function handleClick(evt) {
   let sqIdx = parseInt(evt.target.id[2])

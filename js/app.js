@@ -42,6 +42,8 @@ console.log(invisibleRowEl)
 
 /*--------------------- Event Listeners -----------------------*/
 
+invisibleRowEl = document.querySelectorAll('click', selectClick)
+
 squareEls.forEach((square) =>
   square.addEventListener('click', handleClick)
 )
@@ -79,7 +81,9 @@ function render (){
   })
 }
 
-//function //
+//function selectClick(evt){
+// let isqIdx = 
+//}
 
 function handleClick(evt) {
   let sqIdx = parseInt(evt.target.id[2])

@@ -40,7 +40,11 @@ console.log(messageEl)
 
 /*--------------------- Event Listeners -----------------------*/
 
+squareEls.forEach((square) =>
+  square.addEventListener('click', handleClick)
+)
 
+resetBtnEl.addEventListener('click', init)
 
 /*------------------------ Functions -------------------------*/
 
@@ -71,4 +75,20 @@ function render (){
       return (winner === 1 ? messageEl.textContent = "Player 1 has won!" : messageEl.textContent = "Player 2 has won!")
     }
   })
+}
+
+function handleClick(evt) {
+  let sqIdx = parseInt(evt.target.id[2])
+  console.log(evt.target.id[2])
+  if (board[sqIdx] !== null) {
+    return
+  } else if (winner !== null) {
+    return
+  } else {
+    board.splice(sqIdx, 1, turn)
+    turn *= -1
+  }
+  console.log(board[sqIdx])
+  getWinner()
+  render()
 }

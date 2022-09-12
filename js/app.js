@@ -31,6 +31,7 @@ let board, turn, winner
 
 /*------------------ Cached Element References --------------*/
 
+const invisibleRowEl = document.querySelectorAll('.invisible-square')
 const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector('#message')
 const resetBtnEl = document.querySelector('#reset-button')

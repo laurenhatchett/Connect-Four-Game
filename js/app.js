@@ -37,7 +37,7 @@ const messageEl = document.querySelector('#message')
 const resetBtnEl = document.querySelector('#reset-button')
 
 console.log(squareEls)
-//console.log(messageEl)
+console.log(messageEl)
 
 
 /*--------------------- Event Listeners -----------------------*/
@@ -50,8 +50,6 @@ resetBtnEl.addEventListener('click', init)
 
 /*--------------------- Row & ColumnArrays -----------------------*/
 
-// const invisibleRow = [invisibleRowEl[0], invisibleRowEl[1],invisibleRowEl[2],invisibleRowEl[3],invisibleRowEl[4], invisibleRowEl[5], invisibleRowEl[6]]
-
 // const row1 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]]
 // const row2 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]]
 // const row3 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]]
@@ -59,8 +57,8 @@ resetBtnEl.addEventListener('click', init)
 // const row5 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]]
 // const row6 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]]
 
-// const invisRow = [invisibleRow]
-// const rows = [row1, row2, row3, row4, row5, row6, invisibleRow]
+
+// const rows = [row1, row2, row3, row4, row5, row6]
 
 // const column1 = [squareEls[0], squareEls[7], squareEls[14], squareEls[21], squareEls[28], squareEls[35]]
 // const column2= [squareEls[1], squareEls[8], squareEls[15], squareEls[22], squareEls[29], squareEls[36]]
@@ -74,8 +72,7 @@ resetBtnEl.addEventListener('click', init)
 
 // for (const row of rows){
 //   for (const squareEls of rows)
-//   //console.log(squareEls)
-// //}
+
 
 
 
@@ -111,19 +108,38 @@ function render (){
 }
 
 
-
 function handleClick(evt) {
-  let sqIdx = parseInt(evt.target.id[2])
-  console.log(evt.target.id[2])
-    if (board[sqIdx] !== null) {
-      return
+  let sqIdxString = evt.target.id //targeting id of string index
+  let sqIdx = parseInt(sqIdxString.slice(2))// slice is deleting the first 2 characters
+  //console.log(sqIdx)
+    if (board[sqIdx] !== null) {//means square has a value, 1, or, -1. Use board[sqIdx] to change value in the board array
+      return //because a player has clicked there
   } else if (winner !== null) {
-      return
+      return //can't click on board because we have a winner. both return functions stop us from running the rest of the function
   } else {
-    board.splice(sqIdx, 1, turn)
-     turn *= -1
+    //look at starting idx value, where has been clicked
+    //I need to look at boxes below clicked spot
+    //loop through by adding 7 which is the box below
+    //if box is empty I continue to loop
+    //if box has a value I stop
+    //if 7 can't be added to the idx at the bottom, I stop and place token in sq
+    //idx is less than 41 
+    
+    for (let i=sqIdx; i<=41 && i>=0; i+=7) {
+      console.log(i)
+      if (board[i] !== null){
+        console.log(i, i-7, 'i-7', sqIdx)
+        board[i-7] = turn
+      }
+      //create tokens in HTML
+      //if statement to assign value of "player 1" token or "player 2" token in clicked squares by using textContent
+      
+    }
   }
-  console.log(board[sqIdx])
-  getWinner()
+    turn *= -1
+  
+    
+  
+  //getWinner()
   render()
 }

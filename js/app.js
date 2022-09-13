@@ -124,22 +124,21 @@ function handleClick(evt) {
     //if box has a value I stop
     //if 7 can't be added to the idx at the bottom, I stop and place token in sq
     //idx is less than 41 
-    
+    let finalPosition
     for (let i=sqIdx; i<=41 && i>=0; i+=7) {
       console.log(i)
       if (board[i] !== null){
-        console.log(i, i-7, 'i-7', sqIdx)
-        board[i-7] = turn
-      }
+        finalPosition= i-7 
+      } else if (i = [35-41] && [35-41] === null ){
+        
+
+    }
       //create tokens in HTML
       //if statement to assign value of "player 1" token or "player 2" token in clicked squares by using textContent
       
     }
+    board[finalPosition]=turn
   }
-    turn *= -1
-  
-    
-  
   //getWinner()
   render()
 }

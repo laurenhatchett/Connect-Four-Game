@@ -47,13 +47,16 @@ div.board {
   grid-template-columns: repeat(7, 8vmin);
   grid-gap: 0vmin;
   margin: 0px auto;
-  border: 3px solid white;
+  border: 10px solid white;
+  border-radius: 10%;
 
 }
 
 div.square {
-  border: 2px solid white;
+  border: 5px solid white;
+  border-radius: 50%;
   text-align: center;
   vertical-align: middle;
 }
+
 

@@ -138,7 +138,26 @@ function handleClick(evt) {
     console.log(board)
     turn *= -1
   }
-  //getWinner()
+  getWinner()
   render()
 }
 
+function getWinner(){
+  winningCombos.forEach(winningCombo => {
+    let points = 0
+    winningCombo.forEach(idx => {
+      points += board[idx]
+    })
+    if (points === 4) {
+      return winner = 1
+    } else if (points === -4) {
+      return winner = -1
+    } else {
+      if(board.some(square =>
+        square === null)===false){
+          return winner = 'D'
+        }
+    }
+  })
+  render()
+}

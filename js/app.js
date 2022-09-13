@@ -129,14 +129,10 @@ function handleClick(evt) {
     for (let i=sqIdx; i<=41 && i>=0; i+=7) {
       if (board[i] !== null) {  
         finalPosition = i-7
-        
+        break 
       } else {  
-        finalPosition = i
-        
-      }
-      return finalPosition
-      
-      //if statement to assign value of "player 1" token or "player 2" token in clicked squares by using textContent
+        finalPosition = i 
+      } //if statement to assign value of "player 1" token or "player 2" token in clicked squares by using textContent
     }
     board[finalPosition] = turn 
     console.log(board)
@@ -145,3 +141,4 @@ function handleClick(evt) {
   //getWinner()
   render()
 }
+

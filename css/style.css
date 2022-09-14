@@ -61,4 +61,11 @@ div.square {
   vertical-align: middle;
 }
 
+.btn{
+  background-color: #0f4c5c;
+  color:white;
+  font-size:50px;
+  border-radius: 10px;
+  
+}
 

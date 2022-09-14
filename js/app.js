@@ -55,7 +55,6 @@ function init() {
   turn = 1
   winner = null
   render ()
-  console.log('init function running', board)
 }
 
 

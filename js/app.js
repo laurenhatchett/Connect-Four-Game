@@ -37,10 +37,6 @@ const messageEl = document.querySelector('#message')
 const resetBtnEl = document.querySelector('#reset-button')
 
 
-console.log(squareEls)
-console.log(messageEl)
-
-
 /*--------------------- Event Listeners -----------------------*/
 
 squareEls.forEach((square) => {
@@ -50,44 +46,16 @@ squareEls.forEach((square) => {
 resetBtnEl.addEventListener('click', init)
 
 
-
-/*--------------------- Row & ColumnArrays -----------------------*/
-
-// const row1 = [squareEls[0], squareEls[1], squareEls[2], squareEls[3], squareEls[4], squareEls[5], squareEls[6]]
-// const row2 = [squareEls[7], squareEls[8], squareEls[9], squareEls[10], squareEls[11], squareEls[12], squareEls[13]]
-// const row3 = [squareEls[14], squareEls[15], squareEls[16], squareEls[17], squareEls[18], squareEls[19], squareEls[20]]
-// const row4 = [squareEls[21], squareEls[22], squareEls[23], squareEls[24], squareEls[25], squareEls[26], squareEls[27]]
-// const row5 = [squareEls[28], squareEls[29], squareEls[30], squareEls[31], squareEls[32], squareEls[33], squareEls[34]]
-// const row6 = [squareEls[35], squareEls[36], squareEls[37], squareEls[38], squareEls[39], squareEls[40], squareEls[41]]
-
-
-// const rows = [row1, row2, row3, row4, row5, row6]
-
-// const column1 = [squareEls[0], squareEls[7], squareEls[14], squareEls[21], squareEls[28], squareEls[35]]
-// const column2= [squareEls[1], squareEls[8], squareEls[15], squareEls[22], squareEls[29], squareEls[36]]
-// const column3= [squareEls[2], squareEls[9], squareEls[16], squareEls[23], squareEls[30], squareEls[37]]
-// const column4= [squareEls[3], squareEls[10], squareEls[17], squareEls[24], squareEls[31], squareEls[38]] 
-// const column5= [squareEls[4], squareEls[11], squareEls[18], squareEls[25], squareEls[32], squareEls[39]]
-// const column6= [squareEls[5], squareEls[12], squareEls[19], squareEls[26], squareEls[33], squareEls[40]]
-// const column7= [squareEls[6], squareEls[13], squareEls[20], squareEls[27], squareEls[34], squareEls[41]]
-
-// const columns= [column1, column2, column3, column4, column5, column6, column7]
-
-// for (const row of rows){
-//   for (const squareEls of rows)
-
-
-
-
 /*------------------------ Functions -------------------------*/
 
 init()
 
-function init () {
+function init() {
   board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,]
   turn = 1
   winner = null
   render ()
+  console.log('init function running', board)
 }
 
 
@@ -99,7 +67,7 @@ function render (){
     } else if (squares === -1) {
       squareEls[idx].style.background = '#e36414' //game pieces
     } else {
-      squareEls[idx].textContent = ' ' //when something hasn't happened yet 
+      squareEls[idx].style.background = "#5f0f40" //when something hasn't happened yet 
     }
     if (winner === null) {
       return (turn === 1 ? messageEl.textContent = "Player 1's turn!!": messageEl.textContent = "Player 2's turn!!")

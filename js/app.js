@@ -36,6 +36,7 @@ const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector('#message')
 const resetBtnEl = document.querySelector('#reset-button')
 
+
 console.log(squareEls)
 console.log(messageEl)
 
@@ -47,6 +48,8 @@ squareEls.forEach((square) => {
 })
 
 resetBtnEl.addEventListener('click', init)
+
+
 
 /*--------------------- Row & ColumnArrays -----------------------*/
 
@@ -87,13 +90,14 @@ function init () {
   render ()
 }
 
+
+
 function render (){
   board.forEach((squares, idx) =>{  
-    squareEls[idx].textContent = squares
     if (squares === 1) {
-      squareEls[idx].textContent = '1' //game pieces
+      squareEls[idx].style.background = '#9a031e' //game pieces
     } else if (squares === -1) {
-      squareEls[idx].textContent = '2' //game pieces
+      squareEls[idx].style.background = '#e36414' //game pieces
     } else {
       squareEls[idx].textContent = ' ' //when something hasn't happened yet 
     }
@@ -161,3 +165,4 @@ function getWinner(){
   })
   render()
 }
+

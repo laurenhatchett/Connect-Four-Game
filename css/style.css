@@ -30,6 +30,7 @@ h1{
 }
 
 h2{
+  font-size: 40px;
   color:white
 }
 
@@ -60,12 +61,4 @@ div.square {
   vertical-align: middle;
 }
 
-.player-one {
-  background-color: #9a031e;
-  border-radius: 10px;
-}
 
-.player-two {
-  background-color: #0f4c5c;
-  border-radius: 10px;
-}

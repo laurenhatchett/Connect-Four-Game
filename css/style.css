@@ -46,10 +46,9 @@ div.invisible-row {
   height:70px;
   border: 5px white solid;
   border-radius: 50%;
-  position: absolute;
+  position: sticky;
   transform:
-    translate(-50%, -10%);
-  
+    translate(-5%, -10%);
 }
 
 div.board {

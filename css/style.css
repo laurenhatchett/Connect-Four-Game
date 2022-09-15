@@ -33,7 +33,9 @@ h1{
 h2{
   font-size: 60px;
   font-family: 'Creepster', cursive;
+  margin: 4px;
   color:white
+  
 }
 
 div.invisible-row {
@@ -43,6 +45,17 @@ div.invisible-row {
   margin: 0px auto;
   grid-gap: 0vmin;
   border: 3px solid red
+}
+
+.floating-circle {
+  background-color: white;
+  width: 75px;
+  height:75px;
+  border-radius: 50%;
+  position: absolute;
+  transform:
+    translate(-50%, -50%);
+  mix-blend-mode: difference;
 }
 
 div.board {
@@ -72,5 +85,23 @@ div.square {
   font-size:50px;
   border-radius: 10px;
   
+}
+
+.middle-section-div {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.player-one-div {
+  margin: 40px;
+  background-color: #0f4c5c;
+  padding: 40px;
+}
+
+.player-two-div{
+  margin:40px;
+  background-color: #0f4c5c;
+  padding: 40px;
 }
 

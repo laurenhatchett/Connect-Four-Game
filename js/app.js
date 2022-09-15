@@ -35,6 +35,7 @@ let board, turn, winner
 const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector('#message')
 const resetBtnEl = document.querySelector('#reset-button')
+const floatingCircle =document.querySelector('.floating-circle')
 
 
 /*--------------------- Event Listeners -----------------------*/
@@ -44,6 +45,12 @@ squareEls.forEach((square) => {
 })
 
 resetBtnEl.addEventListener('click', init)
+
+document.addEventListener("mousemove", 
+  function(event) {
+    mouseX = event.pageX
+    mouseY = event.pageY
+  })
 
 
 /*------------------------ Functions -------------------------*/
@@ -133,3 +140,21 @@ function getWinner(){
   render()
 }
 
+let mouseX = 0
+let mouseY = 0
+
+let floatingCircleX = 0
+let floatingCircleY = 0
+
+let speed= 0.5
+
+function animate() {
+  let distX = mouseX - floatingCircleX
+  //let distY = mouseY - floatingCircleY
+  floatingCircleX = floatingCircleX + (distX * speed)
+  //floatingCircleY = floatingCircleY + (distY * speed)
+  floatingCircle.style.left = floatingCircleX + 'px'
+  //floatingCircle.style.top = floatingCircleY + 'px'
+  requestAnimationFrame(animate)
+}
+animate()

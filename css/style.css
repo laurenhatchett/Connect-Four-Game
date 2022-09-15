@@ -3,15 +3,6 @@ html {
   box-sizing: border-box
 }
 
-/* The Universal Selector */
-/*, /* All elements*/
-/*::before, /* All ::before pseudo-elements */
-/*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
-/* box-sizing: inherit;
-}*/
-
 body{
   background-color: #5f0f40;
   font-family: sans-serif;
@@ -53,7 +44,7 @@ div.invisible-row {
   height:70px;
   border: 5px white solid;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
   transform:
     translate(-50%, -10%);
   

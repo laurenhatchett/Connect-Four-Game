@@ -19,6 +19,7 @@ h1{
   color: white;
   font-size: 100px;
   font-family: 'Creepster', cursive;
+  margin: 50px 0 0 20px;
 }
 
 h2{
@@ -31,6 +32,7 @@ h2{
 
 div.invisible-row {
   display:grid;
+  height: 64px;
   grid-template-rows: repeat(1, 8vmin);
   grid-template-columns: repeat(7, 8vmin);
   margin: 0px auto;
@@ -86,23 +88,30 @@ div.square {
 }
 
 .player-one-div {
-  margin: 40px;
-  background-color: #0f4c5c;
-  padding: 40px;
+  width: 64px;
+  margin: 30px;
+  background-color: #9a031e;
+  padding: 20px;
+  border-radius: 50%;
 }
 
 .player-two-div{
-  margin:40px;
-  background-color: #0f4c5c;
-  padding: 40px;
+  width: 64px;
+  margin:30px;
+  background-color: #e36414;
+  padding: 20px;
+  border-radius: 50%;
 }
 
 .player-one {
   color: white;
   font-family:'Creepster', cursive;
+  font-size: 20px;
 }
 
 .player-two {
   color: white;
   font-family:'Creepster', cursive;
+  font-size: 20px;
 }
+

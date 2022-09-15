@@ -26,11 +26,13 @@ body{
 
 h1{
   color: white;
-  font-size: 80px;
+  font-size: 100px;
+  font-family: 'Creepster', cursive;
 }
 
 h2{
-  font-size: 40px;
+  font-size: 60px;
+  font-family: 'Creepster', cursive;
   color:white
 }
 
@@ -62,8 +64,10 @@ div.square {
 }
 
 
+
 .btn{
   background-color: #0f4c5c;
+  font-family: 'Creepster', cursive;
   color:white;
   font-size:50px;
   border-radius: 10px;

@@ -18,19 +18,19 @@ https://lauren-hatchett-connect-four-game.netlify.app
 ---
 ## Technologies Used
 
-HTML
-CSS
-JavaScript
-Git
+### HTML
+### CSS
+### JavaScript
+### ##Git
 
 ---
 ## Next Steps (Icebox)
 
-add token dropping effect
-add option to play against computer
-accessibility features (keyboard input)
-dark mode
-add hover effect over each cell
+### add token dropping effect
+### add option to play against computer
+### accessibility features (keyboard input)
+### dark mode
+### add hover effect over each cell
 
 ---
 ## Credits

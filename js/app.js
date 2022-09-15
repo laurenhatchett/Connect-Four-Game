@@ -1,4 +1,3 @@
-/*----------------------- Constants --------------------------*/
 
 const winningCombos = [[0, 1, 2, 3], [41, 40, 39, 38],[7, 8, 9, 10], 
 [34, 33, 32, 31], [14, 15, 16, 17], [27, 26, 25, 24], 
@@ -24,21 +23,12 @@ const winningCombos = [[0, 1, 2, 3], [41, 40, 39, 38],[7, 8, 9, 10],
 [8, 15, 22, 29], [9, 16, 23, 30], [10, 17, 24, 31], 
 [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34] 
 ]
-
-/*------------------------ Variables (state) --------------------------*/
-
 let board, turn, winner
-
-/*------------------ Cached Element References --------------*/
-
 
 const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector('#message')
 const resetBtnEl = document.querySelector('#reset-button')
 const floatingCircle =document.querySelector('.floating-circle')
-
-
-/*--------------------- Event Listeners -----------------------*/
 
 squareEls.forEach((square) => {
   square.addEventListener('click', handleClick)
@@ -52,8 +42,6 @@ document.addEventListener("mousemove",
     mouseY = event.pageY
   })
 
-
-/*------------------------ Functions -------------------------*/
 
 init()
 
@@ -138,11 +126,8 @@ let speed= 0.5
 
 function animate() {
   let distX = mouseX - floatingCircleX
-  //let distY = mouseY - floatingCircleY
   floatingCircleX = floatingCircleX + (distX * speed)
-  //floatingCircleY = floatingCircleY + (distY * speed)
   floatingCircle.style.left = floatingCircleX + 'px'
-  //floatingCircle.style.top = floatingCircleY + 'px'
   requestAnimationFrame(animate)
 }
 animate()

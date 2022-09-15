@@ -51,11 +51,11 @@ div.invisible-row {
   background-color: #5f0f40;
   width: 75px;
   height:75px;
-  border: 2px white solid;
+  border: 5px white solid;
   border-radius: 50%;
   position: absolute;
   transform:
-    translate(-50%, -50%);
+    translate(-50%, -10%);
   
 }
 

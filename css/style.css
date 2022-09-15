@@ -115,12 +115,3 @@ div.square {
   color: white;
   font-family:'Creepster', cursive;
 }
-
-div.player-one-token {
-  color: #9a031e;
-  border: 2 px solid #9a031e;
-}
-
-div.player-two-token {
-  color:#e36414;
-}

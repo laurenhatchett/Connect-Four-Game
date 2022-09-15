@@ -67,11 +67,11 @@ function init() {
 function render (){
   board.forEach((squares, idx) =>{  
     if (squares === 1) {
-      squareEls[idx].style.background = '#9a031e' //game pieces
+      squareEls[idx].style.background = '#9a031e' 
     } else if (squares === -1) {
-      squareEls[idx].style.background = '#e36414' //game pieces
+      squareEls[idx].style.background = '#e36414' 
     } else {
-      squareEls[idx].style.background = "#5f0f40" //when something hasn't happened yet 
+      squareEls[idx].style.background = "#5f0f40" 
     }
     if (winner === null) {
       return (turn === 1 ? messageEl.textContent = "Player 1's turn!!": messageEl.textContent = "Player 2's turn!!")
@@ -102,7 +102,6 @@ function handleClick(evt) {
       } 
     }
     board[finalPosition] = turn 
-    console.log(board)
     turn *= -1
   }
   getWinner()

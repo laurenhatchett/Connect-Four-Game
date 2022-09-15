@@ -44,16 +44,16 @@ div.invisible-row {
   grid-template-columns: repeat(7, 8vmin);
   margin: 0px auto;
   grid-gap: 0vmin;
-  border: 3px solid red
+  border: 3px solid #5f0f40;
 }
 
 .floating-circle {
   background-color: #5f0f40;
-  width: 75px;
-  height:75px;
+  width: 70px;
+  height:70px;
   border: 5px white solid;
   border-radius: 50%;
-  position: absolute;
+  position: relative;
   transform:
     translate(-50%, -10%);
   

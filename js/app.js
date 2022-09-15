@@ -64,8 +64,6 @@ function init() {
   render ()
 }
 
-
-
 function render (){
   board.forEach((squares, idx) =>{  
     if (squares === 1) {
@@ -85,23 +83,14 @@ function render (){
   })
 }
 
-
 function handleClick(evt) {
-  let sqIdxString = evt.target.id //targeting id of string index
-  let sqIdx = parseInt(sqIdxString.slice(2))// slice is deleting the first 2 characters
-  //console.log(sqIdx)
-    if (board[sqIdx] !== null) {//means square has a value, 1, or, -1. Use board[sqIdx] to change value in the board array
-      return //because a player has clicked there
+  let sqIdxString = evt.target.id 
+  let sqIdx = parseInt(sqIdxString.slice(2)) 
+    if (board[sqIdx] !== null) {
+      return 
   } else if (winner !== null) {
-      return //can't click on board because we have a winner. both return functions stop us from running the rest of the function
+      return 
   } else {
-    //look at starting idx value, where has been clicked
-    //I need to look at boxes below clicked spot
-    //loop through by adding 7 which is the box below
-    //if box is empty I continue to loop
-    //if box has a value I stop
-    //if 7 can't be added to the idx at the bottom, I stop and place token in sq
-    //idx is less than 41 
     
     let finalPosition
     for (let i=sqIdx; i<=41 && i>=0; i+=7) {
@@ -110,7 +99,7 @@ function handleClick(evt) {
         break 
       } else {  
         finalPosition = i 
-      } //if statement to assign value of "player 1" token or "player 2" token in clicked squares by using textContent
+      } 
     }
     board[finalPosition] = turn 
     console.log(board)
